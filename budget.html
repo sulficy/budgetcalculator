@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Calculator</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url(./images/pexels-olia-danilevich-5466785.jpg);
+            background-size: cover;
+            color: white;
+        }
+        .container {
+            background: rgba(55, 54, 54, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(50px);
+            max-width: 600px;
+            margin: auto;
+            margin-top: 50px;
+        }
+        .form-control {
+            background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+            border: none; /* Remove border */
+            color: white; /* Text color */
+        }
+        .form-control:focus {
+            background: rgba(201, 183, 183, 0.3); /* Slightly more opaque on focus */
+            box-shadow: none; /* Remove shadow */
+        }
+        .result {
+            margin-top: 40px;
+            font-weight: bold;
+            color: white;
+            transition: color 0.3s ease;
+        }
+        .positive {
+            color: #28a745; /* Green for savings */
+        }
+        .negative {
+            color: #dc3545; /* Red for overspending */
+        }
+    </style>
+</head>
+<body>
+    <!-- <input type="text" id="halo"> -->
+<div class="container">
+    <h2 class="text-center">Budget Calculator</h2>
+    <div id="budget-form">
+        <div class="form-group">
+            <label for="totalIncome">Total Income (₹)</label>
+            <input type="number" class="form-control" id="totalIncome" >
+        </div>
+        <div class="form-group">
+            <label for="rent">Rent (₹)</label>
+            <input type="number" class="form-control" id="Rent" >
+        </div>
+        <div class="form-group">
+            <label for="groceries">Groceries (₹)</label>
+            <input type="number" class="form-control" id="groceries" >
+        </div>
+        <div class="form-group">
+            <label for="transportation">Transportation (₹)</label>
+            <input type="number" class="form-control" id="transportation" >
+        </div>
+        <div class="form-group">
+            <label for="entertainment">Entertainment (₹)</label>
+            <input type="number" class="form-control" id="entertainment" >
+        </div>
+        <div class="form-group">
+            <label for="otherExpenses">Other Expenses (₹)</label>
+            <input type="number" class="form-control" id="Other" >
+        </div>
+        <button type="" onclick="calcu()" class="btn btn-primary">Calculate Balance</button>
+        
+    </div>
+
+    <div class="result text-center" id="result"></div>
+</div>
+
+<!-- <script>
+    function calculateBalance() {
+        const totalIncome = parseFloat(document.getElementById('totalIncome').value) || 0;
+        const rent = parseFloat(document.getElementById('rent').value) || 0;
+        const groceries = parseFloat(document.getElementById('groceries').value) || 0;
+        const transportation = parseFloat(document.getElementById('transportation').value) || 0;
+        const entertainment = parseFloat(document.getElementById('entertainment').value) || 0;
+        const otherExpenses = parseFloat(document.getElementById('otherExpenses').value) || 0;
+
+        const totalExpenses = rent + groceries + transportation + entertainment + otherExpenses;
+        const balance = totalIncome - totalExpenses;
+
+        const resultDiv = document.getElementById('result');
+        resultDiv.classList.remove('positive', 'negative');
+        if (balance > 0) {
+            resultDiv.innerHTML = `You have saved ₹${balance.toFixed(2)}.`;
+            resultDiv.classList.add('positive');
+        } else {
+            resultDiv.innerHTML = `You have overspent by ₹${Math.abs(balance).toFixed(2)}.`;
+            resultDiv.classList.add('negative');
+        }
+    }
+
+    document.getElementById('budget-form').addEventListener('input', calculateBalance);
+    document.getElementById('budget-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        calculateBalance();
+    });
+
+    document.getElementById('clearBtn').addEventListener('click', function() {
+        document.getElementById('budget-form').reset();
+        document.getElementById('result').innerHTML = '';
+    });
+</script> -->
+
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+</body>
+<script src="./main.js"></script>
+</html>
